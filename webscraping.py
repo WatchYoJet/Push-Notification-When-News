@@ -100,3 +100,4 @@ while True:
                 'Novo Anuncio!',
                 f'Novo anuncio em ({cadeiras[cadeira]}):\n {cadeira}')
             textDelete(cadeiras[cadeira])
+    time.sleep(60*5)
