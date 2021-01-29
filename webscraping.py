@@ -27,7 +27,7 @@ def checker(URL, cadeira):
         htmlText += title[j]
         j += 1
 
-    writepath = f'./Testing Fun Stuff/htmlText{cadeira}.txt'
+    writepath = f'./htmlText{cadeira}.txt'
     mode = 'r' if os.path.exists(writepath) else 'w'
     with open(writepath, mode) as f:
         try:
