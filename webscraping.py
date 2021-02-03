@@ -99,8 +99,8 @@ url_aux = 'https://fenix.tecnico.ulisboa.pt/disciplinas/SD77/2020-2021/1-semestr
 
 while True:
     for cadeira in cadeiras.keys():
-        if not checker(url_aux, 'SD'):
-            emailSender(url_aux, 'SD', 1)
+        if not checker(url_aux, 'SD1'):
+            emailSender(url_aux, 'SD1', 1)
         if not checker(cadeira, cadeiras[cadeira]):
             emailSender(cadeira, cadeiras[cadeira], 0)
             pushbullet_message(
