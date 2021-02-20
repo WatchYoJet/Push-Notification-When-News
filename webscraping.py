@@ -47,7 +47,7 @@ def textDelete(cadeira):
         os.remove(f"htmlText{cadeira}.txt")
 
 
-def emailSender(URL, cadeira, fig):
+def emailSender(URL, cadeira):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
@@ -59,14 +59,10 @@ def emailSender(URL, cadeira, fig):
     body = f'Novo Anuncio em: \n {URL}'
     msg = f'Subject: {subject}\n\n{body}'
 
-    if fig == 1:
-        server.sendmail('pedropereira972@gmail.com',
-                        'pedro.nogueira.figueiredo@gmail.com', msg)
-    else:
-        server.sendmail('pedropereira972@gmail.com',
-                        'pedropereira972@gmail.com', msg)
-        server.sendmail('pedropereira972@gmail.com',
-                        'p.vaz.pereira@tecnico.ulisboa.pt', msg)
+    server.sendmail('pedropereira972@gmail.com', 'pedropereira972@gmail.com',
+                    msg)
+    server.sendmail('pedropereira972@gmail.com',
+                    'p.vaz.pereira@tecnico.ulisboa.pt', msg)
     print('SENT!')
     server.quit()
 
@@ -96,16 +92,12 @@ cadeiras = {
     'SD'  #SD
 }
 
-url_aux = 'https://fenix.tecnico.ulisboa.pt/disciplinas/SD77/2020-2021/1-semestre'
-
 while True:
     for cadeira in cadeiras.keys():
-        if not checker(url_aux, 'SD1'):
-            emailSender(url_aux, 'SD1', 1)
         if not checker(cadeira, cadeiras[cadeira]):
-            emailSender(cadeira, cadeiras[cadeira], 0)
+            emailSender(cadeira, cadeiras[cadeira])
             pushbullet_message(
                 'Novo Anuncio!',
                 f'Novo anuncio em ({cadeiras[cadeira]}):\n {cadeira}')
             textDelete(cadeiras[cadeira])
-    time.sleep(60 * 5)
+    time.sleep(5 * 60)
