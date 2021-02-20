@@ -35,7 +35,7 @@ def checker(URL, cadeira):
         except:
             pass
 
-    if htmlText == open(writepath).read():
+    if 'ola!' == open(writepath).read(): #htmlText
         pote = True
     else:
         pote = False
