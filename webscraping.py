@@ -35,7 +35,7 @@ def checker(URL, cadeira):
         except:
             pass
 
-    if 'ola!' == open(writepath).read(): #htmlText
+    if htmlText == open(writepath).read():
         pote = True
     else:
         pote = False
@@ -45,26 +45,6 @@ def checker(URL, cadeira):
 def textDelete(cadeira):
     if os.path.exists(f"htmlText{cadeira}.txt"):
         os.remove(f"htmlText{cadeira}.txt")
-
-
-def emailSender(URL, cadeira):
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.ehlo()
-    server.starttls()
-    server.ehlo()
-
-    server.login('pedropereira972@gmail.com', TOKEN_MAIL)
-
-    subject = f'Novo Anuncio! ({cadeira})'
-    body = f'Novo Anuncio em: \n {URL}'
-    msg = f'Subject: {subject}\n\n{body}'
-
-    server.sendmail('pedropereira972@gmail.com', 'pedropereira972@gmail.com',
-                    msg)
-    server.sendmail('pedropereira972@gmail.com',
-                    'p.vaz.pereira@tecnico.ulisboa.pt', msg)
-    print('SENT!')
-    server.quit()
 
 
 def pushbullet_message(title, body):
@@ -94,12 +74,9 @@ cadeiras = {
 
 while True:
     for cadeira in cadeiras.keys():
-        if not checker(cadeira, cadeiras[cadeira]):
-            emailSender(cadeira, cadeiras[cadeira])
+        if checker(cadeira, cadeiras[cadeira]):
             pushbullet_message(
                 'Novo Anuncio!',
                 f'Novo anuncio em ({cadeiras[cadeira]}):\n {cadeira}')
             textDelete(cadeiras[cadeira])
-        else:
-            print('Nothing!')
     time.sleep(5 * 60)
