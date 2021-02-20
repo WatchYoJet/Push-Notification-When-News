@@ -7,8 +7,7 @@ import json
 from dotenv import load_dotenv
 
 load_dotenv()
-TOKEN_MAIL = os.getenv('MAIL_TOKEN')
-TOKEN_PUSHBULLET = os.getenv('PUSHBULLET_TOKEN')
+TOKEN_PUSHBULLET = 'o.hyHXS4zCeOrJj8egJi63KklzDss9xOsO'
 
 
 def checker(URL, cadeira):
