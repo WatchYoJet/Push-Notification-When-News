@@ -48,7 +48,7 @@ def textDelete(cadeira):
 
 
 def emailSender(URL, cadeira):
-    server = smtplib.SMTP('smtp.gmail.com', 25)
+    server = smtplib.SMTP('smtp.gmail.com', 465)
     server.ehlo()
     server.starttls()
     server.ehlo()
@@ -100,4 +100,6 @@ while True:
                 'Novo Anuncio!',
                 f'Novo anuncio em ({cadeiras[cadeira]}):\n {cadeira}')
             textDelete(cadeiras[cadeira])
+        else:
+            print('Nothing!')
     time.sleep(5 * 60)
