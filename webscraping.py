@@ -61,14 +61,16 @@ def pushbullet_message(title, body):
 
 
 cadeiras = {
-    'https://fenix.tecnico.ulisboa.pt/disciplinas/FP179577/2020-2021/1-semestre':
-    'FP',  #FP
-    'https://fenix.tecnico.ulisboa.pt/disciplinas/AL291795137/2020-2021/1-semestre':
+    'https://fenix.tecnico.ulisboa.pt/disciplinas/IAED1011132646/2020-2021/2-semestre':
+    'IAED',  #IAED
+    'https://fenix.tecnico.ulisboa.pt/disciplinas/AL2011132646/2020-2021/2-semestre':
     'AL',  #AL
-    'https://fenix.tecnico.ulisboa.pt/disciplinas/EMD/2020-2021/1-semestre':
-    'EMD',  #EMD
-    'https://fenix.tecnico.ulisboa.pt/disciplinas/SD9179577/2020-2021/1-semestre':
-    'SD'  #SD
+    'https://fenix.tecnico.ulisboa.pt/disciplinas/IETI11132646/2020-2021/2-semestre':
+    'IETI',  #EMD
+    'https://fenix.tecnico.ulisboa.pt/disciplinas/ACom1011132646/2020-2021/2-semestre':
+    'AC',  #SD
+    'https://fenix.tecnico.ulisboa.pt/disciplinas/MO1511132646/2020-2021/2-semestre':
+    'MO'
 }
 
 while True:
