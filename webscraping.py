@@ -75,7 +75,7 @@ cadeiras = {
 
 while True:
     for cadeira in cadeiras.keys():
-        if checker(cadeira, cadeiras[cadeira]):
+        if not checker(cadeira, cadeiras[cadeira]):
             pushbullet_message(
                 'Novo Anuncio!',
                 f'Novo anuncio em ({cadeiras[cadeira]}):\n {cadeira}')
