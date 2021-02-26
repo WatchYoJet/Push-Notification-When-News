@@ -73,7 +73,7 @@ cadeiras = {
 while True:
     for cadeira in cadeiras.keys():
         if checker(cadeira, cadeiras[cadeira]):
-            pushbullet_message('Novo Anuncio!',
+            pushbullet_message(f'Novo Anuncio! {cadeiras[cadeira]}',
                                checker(cadeira, cadeiras[cadeira]))
             textDelete(cadeiras[cadeira])
     time.sleep(10)
