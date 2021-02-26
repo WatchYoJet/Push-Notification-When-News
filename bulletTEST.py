@@ -6,8 +6,6 @@ import smtplib
 import json
 from dotenv import load_dotenv
 
-TOKEN_PUSHBULLET = 'o.hyHXS4zCeOrJj8egJi63KklzDss9xOsO'
-
 
 def checker(URL, cadeira):
     headers = {
